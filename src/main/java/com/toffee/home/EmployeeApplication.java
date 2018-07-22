@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @SpringBootApplication
-@ComponentScan(basePackageClasses = { EmployeeController.class }, basePackages = { "com.citi.eqtds" })
+@ComponentScan(basePackageClasses = { EmployeeController.class }, basePackages = { "com.toffee.home" })
 public class EmployeeApplication {
 	public static void main(String... args) {
 		SpringApplication.run(EmployeeApplication.class, args);
@@ -31,7 +31,7 @@ public class EmployeeApplication {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.citi.eqtds")).paths(PathSelectors.ant("/employee-service/api/v1/**"))
+				.apis(RequestHandlerSelectors.basePackage("com.toffee.home")).paths(PathSelectors.ant("/employee-service/api/v1/**"))
 				.build().apiInfo(apiInfo());
 	}
 
